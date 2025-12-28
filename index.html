@@ -1,173 +1,270 @@
 <!DOCTYPE html>
-<!-- saved from url=(0066)file:///E:/Documentos/CV/P%C3%A1gina%20web/SOC/index.html#projects -->
-<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <title>Rafael Vargas | Cybersecurity Portfolio</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root { --neon-blue: #00f2ff; --dark-bg: #050505; }
+        body { background-color: var(--dark-bg); color: #ffffff; font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; overflow-x: hidden; }
 
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Rafael Vargas — Analista SOC Jr</title>
-<link rel="shortcut icon" href="./Rafael Vargas — Analista SOC Jr_files/logo.png">
-<link href="./Rafael Vargas — Analista SOC Jr_files/css2" rel="stylesheet">
-<style>
-:root{
-  --bg:#0a0f1a;
-  --panel:#0f1724;
-  --accent:#c60161;
-  --cyan:#38bdf8;
-  --text:#d1d5db;
-  --muted:#9aa0a8;
-}
-*{box-sizing:border-box}
-body{margin:0;font-family: Poppins, Public Sans, Arial, sans-serif;background:linear-gradient(#07101a,#02060c);color:var(--text);-webkit-font-smoothing:antialiased}
-.container{max-width:1100px;margin:0 auto;padding:30px}
-.header{display:flex;justify-content:space-between;align-items:center;padding:26px 0}
-.header img{height:56px}
-.header nav a{color:var(--cyan);text-decoration:none;margin-left:18px;font-weight:600}
-.hero{position:relative;padding:60px 0;text-align:left;display:flex;gap:30px;align-items:center}
-.hero .left{flex:1}
-.hero h1{font-size:44px;margin:0 0 12px;color:#ffffff;font-weight:900;text-shadow:0 6px 30px rgba(56,189,248,0.06)}
-.hero p.lead{font-size:18px;color:var(--muted);max-width:700px}
-.cta{display:inline-block;margin-top:18px;padding:14px 28px;border-radius:30px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
-.hero .art{flex:0 0 420px;text-align:right}
-.panel{background:var(--panel);border:1px solid #13202b;padding:22px;border-radius:14px;box-shadow:0 6px 30px rgba(0,0,0,0.6)}
-.section-title{color:var(--cyan);font-weight:800;margin-bottom:18px;font-size:28px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.card{background:var(--panel);border:1px solid #13202b;padding:20px;border-radius:12px}
-.card h3{color:var(--accent);margin:0 0 8px}
-.card p{margin:0;color:var(--text);line-height:1.5}
-.form-wrap{max-width:640px;margin:auto}
-.form-wrap label{display:block;color:var(--muted);font-size:14px;margin-bottom:6px}
-.form-wrap input,.form-wrap select,.form-wrap textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #163040;background:transparent;color:var(--text);margin-bottom:12px}
-.form-wrap .submit{background:var(--accent);color:#fff;padding:12px 18px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
-.footer{border-top:1px solid #12202a;padding:30px;text-align:center;color:var(--muted);font-size:14px;margin-top:40px}
-.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#07202a;color:var(--cyan);font-weight:700;margin-right:8px;font-size:13px}
-.kv{color:var(--cyan);font-weight:700}
-@media(max-width:880px){.hero{flex-direction:column}.hero .art{order:-1;text-align:center}}
-</style>
+        /* --- MARCA PERSONAL --- */
+        .brand-header {
+            position: absolute; top: 40px; left: 12%; z-index: 10;
+            font-weight: 800; font-size: 18px; letter-spacing: 1px; text-transform: uppercase;
+        }
+        .brand-header span { color: var(--neon-blue); }
+
+        /* --- LÍNEA SVG --- */
+        .line-wrapper { 
+            position: absolute; left: 0; top: 0; width: 100%; height: 1200px; z-index: 0; pointer-events: none;
+            -webkit-mask-image: linear-gradient(to bottom, black 0%, black 20%, transparent 35%, transparent 60%, black 75%);
+            mask-image: linear-gradient(to bottom, black 0%, black 20%, transparent 35%, transparent 60%, black 75%);
+        }
+
+        @media (min-width: 992px) {
+            .line-wrapper { -webkit-mask-image: none; mask-image: none; }
+        }
+
+        .main-path { stroke: var(--neon-blue); stroke-width: 2; fill: none; opacity: 0.25; }
+        .dot-point { fill: var(--neon-blue); filter: drop-shadow(0 0 8px var(--neon-blue)); }
+
+        /* --- HERO --- */
+        .hero_wrapper { 
+            display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; 
+            padding: 160px 10% 60px 12%; position: relative; z-index: 1; 
+        }
+        .hero-title { font-size: clamp(40px, 6vw, 80px); font-weight: 800; line-height: 0.95; letter-spacing: -3px; }
+
+        /* --- SKILLS CARDS --- */
+        .skills-container { display: flex; flex-direction: column; gap: 20px; }
+        .skills-header { font-size: 10px; letter-spacing: 3px; color: var(--neon-blue); text-transform: uppercase; font-weight: 700; margin-bottom: 10px; opacity: 0.8; }
+        .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .cyber-card { background: #0a0a0a; border: 1px solid rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 8px; position: relative; z-index: 2; transition: 0.4s; }
+        .cyber-card:hover { border-color: var(--neon-blue); transform: translateY(-5px); }
+        
+        .icon-container { 
+            width: 60px; height: 60px; border: 1px solid rgba(0, 242, 255, 0.3); 
+            display: flex; align-items: center; justify-content: center; 
+            margin-bottom: 20px; color: var(--neon-blue); border-radius: 10px;
+            background: rgba(0, 242, 255, 0.02);
+        }
+        .icon-container svg { width: 30px; height: 30px; }
+
+        .cyber-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 10px; color: #eee; }
+        .cyber-card p { font-size: 11px; color: #777; line-height: 1.6; margin: 0; }
+
+        /* --- VIDEO SECTION --- */
+        .video-section { padding: 60px 0 20px 0; position: relative; z-index: 2; text-align: center; }
+        .video-container { 
+            display: flex; overflow-x: auto; gap: 30px; padding: 40px 20%; 
+            scroll-snap-type: x mandatory; scrollbar-width: none; align-items: center;
+        }
+        .video-container::-webkit-scrollbar { display: none; }
+
+        .video-card { 
+            min-width: clamp(280px, 40vw, 450px); height: clamp(160px, 25vw, 260px);
+            background: #000; border: 1px solid rgba(255,255,255,0.1); 
+            scroll-snap-align: center; border-radius: 12px; position: relative; 
+            overflow: hidden; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s;
+            flex-shrink: 0; cursor: pointer;
+        }
+
+        .video-card:hover, .video-card:focus-within {
+            transform: scale(1.1);
+            border-color: var(--neon-blue);
+            z-index: 10;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+        .video-card video { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- GADGET & CONTACT SECTIONS --- */
+        .scramble-section {
+            padding: 60px 12% 40px 12%; display: flex; align-items: center; justify-content: center; gap: 40px;
+            position: relative; z-index: 2; border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .scramble-label { font-size: 28px; font-weight: 800; max-width: 450px; line-height: 1.2; }
+        .scramble-pill { border: 1px solid var(--neon-blue); border-radius: 100px; padding: 20px 60px; min-width: 320px; text-align: center; background: rgba(0, 242, 255, 0.03); }
+        #scramble-target { font-size: 28px; font-weight: 500; color: #fff; }
+
+        /* BOTÓN DE CONTACTO */
+        .btn-engagement { background: var(--neon-blue); color: #000; padding: 18px 40px; border-radius: 100px; font-weight: 800; text-decoration: none; display: inline-block; margin-top: 30px; font-size: 12px; letter-spacing: 1px; transition: 0.3s; }
+        .btn-engagement:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(0, 242, 255, 0.4); }
+
+        @media (max-width: 991px) {
+            .hero_wrapper, .scramble-section { grid-template-columns: 1fr; flex-direction: column; text-align: center; padding-top: 100px; }
+            .video-container { padding: 30px 10%; }
+            .scramble-pill { min-width: 100%; padding: 15px 20px; }
+            .cards-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-  <header class="header">
-    <img src="./Rafael Vargas — Analista SOC Jr_files/logo.png">
-    <nav>
-      <a href="file:///E:/Documentos/CV/P%C3%A1gina%20web/SOC/index.html#skills">Skills</a>
-      <a href="file:///E:/Documentos/CV/P%C3%A1gina%20web/SOC/index.html#projects">Proyectos</a>
-      <a href="file:///E:/Documentos/CV/P%C3%A1gina%20web/SOC/index.html#contact">Contacto</a>
-    </nav>
-  </header>
 
-  <section class="hero" id="home">
-    <div class="left">
-      <h1>Rafael Vargas — Analista SOC Jr</h1>
-      <p class="lead">Analista SOC Jr enfocado en detección temprana, monitoreo y respuesta inicial. Experiencia en montaje y operación de laboratorios SOC, análisis de alertas, correlación en SIEM y protocolos de respuesta a incidentes.</p>
-      <a class="cta" href="file:///E:/Documentos/CV/P%C3%A1gina%20web/SOC/index.html#contact">Solicitar contacto</a>
-      <div style="margin-top:18px">
-        <span class="badge">SOC</span><span class="badge">Blue Team</span><span class="badge">SIEM</span>
-      </div>
+    <div class="brand-header">RAFAEL <span>VARGAS</span></div>
+
+    <div class="line-wrapper">
+        <svg width="100%" height="100%">
+            <path id="masterPath" class="main-path" d="M80,0 L80,350 L140,400 L140,1100" />
+            <circle id="movingDot" class="dot-point" r="5" cx="-10" cy="-10" />
+        </svg>
     </div>
-    <div class="art">
-      <img src="./Rafael Vargas — Analista SOC Jr_files/logo.png" style="width: 500px;" alt="logo.png">
-    </div>
-  </section>
 
-  <section class="panel" style="margin-top:20px">
-    <h2 class="section-title">Perfil Profesional</h2>
-    <p>Analista SOC Junior autodidacta, con experiencia práctica en la construcción y gestión de laboratorios orientados a monitoreo y análisis básico de eventos. Manejo inicial de Splunk, Windows Server, Linux y servicios como Active Directory, DNS, GPO, DHCP. Familiaridad con análisis de tráfico en Wireshark, correlación simple de alertas y documentación técnica. En formación continua mediante laboratorios y plataformas como TryHackMe, con enfoque práctico y orientado a respuesta temprana.:</p>
-    <ul style="color:var(--text);line-height:1.6">
-      <li>Monitoreo y triage de alertas en SIEM (Splunk).</li>
-      <li>Investigación de incidentes: análisis forense inicial, captura de evidencias y remediación.</li>
-      <li>Montaje de laboratorios en VirtualBox (Windows Server, Kali, Ubuntu) para pruebas y simulaciones.</li>
-      <li>Comunicación técnica y reportes ejecutivos para equipos no técnicos.</li>
-    </ul>
-  </section>
+    <main class="hero_wrapper">
+        <div data-aos="fade-right">
+            <h1 class="hero-title">ANÁLISIS SOC<br><span style="color:var(--neon-blue)">EN CIBERSEGURIDAD</span></h1>
+            <p style="color: #666; max-width: 480px; margin-top: 25px; font-size: 18px; line-height: 1.6;">
+                Monitoreo y análisis de eventos, nociones de SIEM (Splunk) y Sysmon; administración de servicios Linux y Windows Server 
+                (AD, DNS, GPO, DHCP); Análisis de tráfico en Wireshark y escaneo en Nmap; configuración de Firewall; correlación simple de 
+                alertas y documentación técnica.
+            </p>
+            <a href="#contact" class="btn-engagement">START ENGAGEMENT</a>
 
-  <section id="skills" style="margin-top:28px">
-    <h2 class="section-title">Habilidades Técnicas</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>SIEM &amp; Monitoreo</h3>
-        <p>Splunk (básico - intermedio). Correlación de eventos, creación de búsquedas y dashboards.</p>
-      </div>
-      <div class="card">
-        <h3>Redes &amp; Protocolos</h3>
-        <p>OSI, TCP/UDP, DNS, HTTP/S. Análisis de tráfico con Wireshark, identificación de anomalías y patrones.</p>
-      </div>
-      <div class="card">
-        <h3>Sistemas Operativos</h3>
-        <p>Windows (Event Logs, Sysinternals), Linux (bash).</p>
-      </div>
-      <div class="card">
-        <h3>Herramientas</h3>
-        <p>Nmap, Wireshark, VirusTotal, PowerShell, VirtualBox.</p>
-      </div>
-      <div class="card">
-        <h3>Respuesta a Incidentes</h3>
-        <p>Triage, containment, escalamiento.</p>
-      </div>
-      <div class="card">
-        <h3>Otras Habilidades</h3>
-        <p>Documentación técnica, creación de reportes ejecutivos, análisis audiovisual para comunicación clara.</p>
-      </div>
-    </div>
-  </section>
+            <div style="display: flex; gap: 40px; margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 40px; flex-wrap: wrap; justify-content: center;">
+                <div>
+                    <div style="font-size: 45px; font-weight: 800; color: var(--neon-blue); line-height: 1;">+<span class="counter" data-target="450">0</span></div>
+                    <div style="font-size: 10px; letter-spacing: 2px; color: #555; text-transform: uppercase; margin-top: 8px; font-weight: 700;">Horas Lab</div>
+                </div>
+                <div>
+                    <div style="font-size: 45px; font-weight: 800; color: var(--neon-blue); line-height: 1;">&lt;<span class="counter" data-target="15">0</span>min</div>
+                    <div style="font-size: 10px; letter-spacing: 2px; color: #555; text-transform: uppercase; margin-top: 8px; font-weight: 700;">Tiempo de Triage</div>
+                </div>
+                <div>
+                    <div style="font-size: 45px; font-weight: 800; color: var(--neon-blue); line-height: 1;">+<span class="counter" data-target="10">0</span></div>
+                    <div style="font-size: 10px; letter-spacing: 2px; color: #555; text-transform: uppercase; margin-top: 8px; font-weight: 700;">Tecnologías</div>
+                </div>
+            </div>
+        </div>
 
-  <section id="projects" style="margin-top:28px">
-    <h2 class="section-title">Experiencia y Proyectos Relevantes</h2>
-    <div class="grid">
-      <div class="card">
-        <h3 class="kv">Laboratorio SOC Completo</h3>
-        <p>Diseño y configuración de entorno con Windows Server, Ubuntu, Kali y Debian. Implementación de AD, DNS, DHCP y GPO; simulación de alertas y pruebas de detección en Splunk.</p>
-      </div>
-      <div class="card">
-        <h3 class="kv">Escenarios de Ataque Simulados</h3>
-        <p>Simulación de phishing, escaneos y acceso sospechoso. Correlación y validación de IOC, creación de dashboards de detección.</p>
-      </div>
-      <div class="card">
-        <h3 class="kv">Progresión de Fuerza y Proyecto Personal</h3>
-        <p>Proyecto personal de monitorización y automatización de alerts basadas en reglas, integración con playbooks simples.</p>
-      </div>
-    </div>
-  </section>
+        <div class="skills-container">
+            <div class="skills-header" data-aos="fade-up">Technical Core Skills</div>
+            <div class="cards-grid">
+                <div class="cyber-card" data-aos="fade-up">
+                    <div class="icon-container">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="11" r="3"/><path d="M7 18c0-2 2-4 5-4s5 2 5 4"/></svg>
+                    </div>
+                    <h3>SIEM (Splunk)</h3>
+                    <p>Instalación y configuración de Forwarders y Servidores, ingesta básica de datos, instalación de aplicaciones, configuración de puertos</p>
+                </div>
+                <div class="cyber-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-container">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6" y2="6"/><line x1="6" y1="18" x2="6" y2="18"/></svg>
+                    </div>
+                    <h3>Networking y Redes</h3>
+                    <p>Configuración robusta de protocolos DHCP, resolución de nombres DNS y diagnóstico avanzado de conectividad mediante modelo TCP/IP.</p>
+                </div>
+                <div class="cyber-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-container">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                    </div>
+                    <h3>Entornos Windows/Linux</h3>
+                    <p>Administración de servidores y estaciones de trabajo multiplataforma, automatización de tareas y gestión remota segura vía SSH/Terminal. Manejo básico de Bash y PowerShell</p>
+                </div>
+                <div class="cyber-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon-container">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3>Análisis y correlación de eventos, Triage, Dashboards</h3>
+                    <p>Monitoreo de eventos y análisis de logs, priorización de incidentes críticos y documentación detallada para el cumplimiento de políticas.</p>
+                </div>
+            </div>
+        </div>
+    </main>
 
-  <section id="education" style="margin-top:28px">
-    <h2 class="section-title">Formación y Cursos</h2>
-    <div class="grid">
-      
-      <div class="card">
-        <h3>Estudios</h3>
-        <li>Programa intensivo en Ciberseguridad (Bootcamp) – MinTIC TalentoTech (2025)
-        <li>Introduction to Cybersecurity – Cisco Networking Academy (2025)
-        <li>Auxiliar de Programación – Escuela Tecnológica Instituto Técnico Central ETITC (2013)
-      
-      </div>
-    </div>
-  </section>
+    <section class="video-section">
+        <h2 style="font-size: 10px; letter-spacing: 3px; color: var(--neon-blue); text-transform: uppercase; margin-bottom: 10px;">Laboratorios Técnicos</h2>
+        <div class="video-container">
+            <div class="video-card"><video controls><source src="E:\Documentos\CV\Ciberseguridad\Web\rsc\Portafolio_2.mp4" type="video/mp4"></video></div>
+            <div class="video-card"><video controls><source src="video2.mp4" type="video/mp4"></video></div>
+            <div class="video-card"><video controls><source src="video3.mp4" type="video/mp4"></video></div>
+            <div class="video-card"><video controls><source src="video4.mp4" type="video/mp4"></video></div>
+            <div class="video-card"><video controls><source src="video5.mp4" type="video/mp4"></video></div>
+        </div>
+    </section>
 
-  <section id="contact" style="margin-top:28px">
-    <h2 class="section-title">Contacto</h2>
-    <div class="grid">
-      <div class="card form-wrap">
-        <h3 style="margin-top:0;color:var(--cyan)">Agenda una llamada / Contacto</h3>
-        <form action="mailto:rafaelv.cyber@gmail.com" method="POST" enctype="text/plain">
-          <label for="name">Nombres</label>
-          <input id="name" name="name" required="">
-          <label for="email">Correo electrónico</label>
-          <input id="email" name="email" type="email" required="">
-          <label for="message">Mensaje / Resumen</label>
-          <textarea id="message" name="message" rows="5"></textarea>
-          <button class="submit" type="submit">Enviar</button>
-        </form>
-      </div>
-      <div class="card">
-        <h3>Contacto directo</h3>
-        <p>Email: <strong>rafaelv.cyber@gmail.com</strong></p>
-        <p>Bogotá, Colombia</p>
-      </div>
-    </div>
-  </section>
+    <section class="scramble-section" data-aos="fade-up">
+        <div class="scramble-label">Análisis SOC para una infraestructura segura</div>
+        <div class="scramble-pill"><div id="scramble-target">Infraestructura</div></div>
+    </section>
 
-  <footer class="footer">
-    © 2025 Rafael Vargas — Analista SOC Jr · CV adaptado a landing
-  </footer>
-</div>
+    <section id="contact" class="scramble-section" style="flex-direction: column; text-align: center; padding-top: 20px; padding-bottom: 100px; border-top: none;">
+        <div class="scramble-label" style="font-size: 36px; margin-bottom: 20px;">Contáctame</div>
+        <div class="scramble-pill">
+            <a href="mailto:rafaelvargas17@hotmail.es" style="color:var(--neon-blue);font-weight:800;text-decoration:none;">
+                rafaelvargas17@hotmail.es
+            </a>
+        </div>
+    </section>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
 
-</body></html>
+        // ANIMACIÓN CONTADORES
+        document.querySelectorAll('.counter').forEach(c => {
+            const target = +c.getAttribute('data-target');
+            let count = 0;
+            const update = () => {
+                const speed = target / 50;
+                if (count < target) { count += speed; c.innerText = Math.ceil(count); setTimeout(update, 30); }
+                else { c.innerText = target; }
+            };
+            update();
+        });
+
+        // GADGET SCRAMBLE
+        class TextScramble {
+            constructor(el) { this.el = el; this.chars = '!<>-_\\/[]{}—=+*^?#________'; this.update = this.update.bind(this); }
+            setText(newText) {
+                const oldText = this.el.innerText;
+                const length = Math.max(oldText.length, newText.length);
+                const promise = new Promise((resolve) => (this.resolve = resolve));
+                this.queue = [];
+                for (let i = 0; i < length; i++) {
+                    const from = oldText[i] || ''; const to = newText[i] || '';
+                    const start = Math.floor(Math.random() * 40); const end = start + Math.floor(Math.random() * 40);
+                    this.queue.push({ from, to, start, end });
+                }
+                this.frame = 0; this.update(); return promise;
+            }
+            update() {
+                let output = ''; let complete = 0;
+                for (let i = 0, n = this.queue.length; i < n; i++) {
+                    let { from, to, start, end, char } = this.queue[i];
+                    if (this.frame >= end) { complete++; output += to; }
+                    else if (this.frame >= start) {
+                        if (!char || Math.random() < 0.28) { char = this.chars[Math.floor(Math.random() * this.chars.length)]; this.queue[i].char = char; }
+                        output += `<span style="color: var(--neon-blue)">${char}</span>`;
+                    } else { output += from; }
+                }
+                this.el.innerHTML = output;
+                if (complete !== this.queue.length) { this.frameRequest = requestAnimationFrame(this.update); this.frame++; } else { this.resolve(); }
+            }
+        }
+        const phrases = ['Monitoreo SIEM', 'Análisis de logs', 'Virtualización', 'Protocolos de red', 'Sysmon', 'Ingesta de datos'];
+        const fx = new TextScramble(document.getElementById('scramble-target'));
+        let counter = 0;
+        const next = () => { fx.setText(phrases[counter]).then(() => { setTimeout(next, 2500); }); counter = (counter + 1) % phrases.length; };
+        next();
+
+        // ANIMACIÓN LÍNEA SVG
+        const path = document.getElementById('masterPath');
+        const dot = document.getElementById('movingDot');
+        if(path) {
+            const pathLength = path.getTotalLength();
+            path.style.strokeDasharray = pathLength;
+            function step(timestamp) {
+                let progress = (timestamp % 3000) / 3000;
+                path.style.strokeDashoffset = pathLength * (1 - progress);
+                const pt = path.getPointAtLength(pathLength * progress);
+                dot.setAttribute('cx', pt.x); dot.setAttribute('cy', pt.y);
+                requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+    </script>
+</body>
+</html>
